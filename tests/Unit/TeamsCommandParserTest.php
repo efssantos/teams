@@ -1,9 +1,9 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Tests\Unit;
+namespace GlpiPlugin\Teams\Tests\Unit;
 
-use GlpiPlugin\Glpimsteams\Service\ContentSanitizer;
-use GlpiPlugin\Glpimsteams\Service\TeamsCommandParser;
+use GlpiPlugin\Teams\Service\ContentSanitizer;
+use GlpiPlugin\Teams\Service\TeamsCommandParser;
 use PHPUnit\Framework\TestCase;
 
 final class TeamsCommandParserTest extends TestCase

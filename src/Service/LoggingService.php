@@ -1,6 +1,6 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Service;
+namespace GlpiPlugin\Teams\Service;
 
 use Toolbox;
 
@@ -42,7 +42,7 @@ final class LoggingService
         }
 
         // GLPI owns the destination and rotation of plugin log files.
-        Toolbox::logInFile('glpimsteams', $line . PHP_EOL);
+        Toolbox::logInFile('teams', $line . PHP_EOL);
 
         return $requestId;
     }

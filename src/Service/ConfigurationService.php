@@ -1,12 +1,12 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Service;
+namespace GlpiPlugin\Teams\Service;
 
 use Config;
 
 final class ConfigurationService
 {
-    public const CONTEXT = 'plugin:glpimsteams';
+    public const CONTEXT = 'plugin:teams';
 
     private const SECRET_FIELDS = [
         'client_secret',

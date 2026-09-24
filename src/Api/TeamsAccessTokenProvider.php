@@ -1,10 +1,10 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Api;
+namespace GlpiPlugin\Teams\Api;
 
-use GlpiPlugin\Glpimsteams\Exception\ProviderHttpException;
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
-use GlpiPlugin\Glpimsteams\Service\ConfigurationService;
+use GlpiPlugin\Teams\Exception\ProviderHttpException;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Service\ConfigurationService;
 
 final class TeamsAccessTokenProvider
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Controller;
+namespace GlpiPlugin\Teams\Controller;
 
-use GlpiPlugin\Glpimsteams\Security\BotFrameworkTokenValidator;
-use GlpiPlugin\Glpimsteams\Service\EventStoreService;
-use GlpiPlugin\Glpimsteams\Service\LoggingService;
-use GlpiPlugin\Glpimsteams\Service\TeamsCommandService;
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Security\BotFrameworkTokenValidator;
+use GlpiPlugin\Teams\Service\EventStoreService;
+use GlpiPlugin\Teams\Service\LoggingService;
+use GlpiPlugin\Teams\Service\TeamsCommandService;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
 
 final class TeamsWebhookController
 {

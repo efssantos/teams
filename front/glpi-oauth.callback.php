@@ -1,12 +1,12 @@
 <?php
 
-use GlpiPlugin\Glpimsteams\Api\CurlHttpClient;
-use GlpiPlugin\Glpimsteams\Api\GlpiOAuthClient;
-use GlpiPlugin\Glpimsteams\Authentication\OAuthService;
-use GlpiPlugin\Glpimsteams\Authentication\OAuthStateStore;
-use GlpiPlugin\Glpimsteams\Authentication\TokenStorageService;
-use GlpiPlugin\Glpimsteams\Service\ConfigurationService;
-use GlpiPlugin\Glpimsteams\Service\LoggingService;
+use GlpiPlugin\Teams\Api\CurlHttpClient;
+use GlpiPlugin\Teams\Api\GlpiOAuthClient;
+use GlpiPlugin\Teams\Authentication\OAuthService;
+use GlpiPlugin\Teams\Authentication\OAuthStateStore;
+use GlpiPlugin\Teams\Authentication\TokenStorageService;
+use GlpiPlugin\Teams\Service\ConfigurationService;
+use GlpiPlugin\Teams\Service\LoggingService;
 
 include '../../../inc/includes.php';
 
@@ -56,7 +56,7 @@ Html::header(
     $_SERVER['PHP_SELF'],
     'config',
     'plugins',
-    'glpimsteams'
+    'teams'
 );
 
 echo '<div class="center">';

@@ -1,8 +1,8 @@
 <?php
 
-use GlpiPlugin\Glpimsteams\Service\ServiceFactory;
+use GlpiPlugin\Teams\Service\ServiceFactory;
 
-final class PluginGlpimsteamsPluginCronTask
+final class PluginTeamsPluginCronTask
 {
     public static function cronprocessOutbox(CronTask $task): int
     {

@@ -1,10 +1,10 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Service;
+namespace GlpiPlugin\Teams\Service;
 
-use GlpiPlugin\Glpimsteams\Api\GlpiClient;
-use GlpiPlugin\Glpimsteams\Authentication\TokenStorageService;
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Api\GlpiClient;
+use GlpiPlugin\Teams\Authentication\TokenStorageService;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
 
 final class UserMappingService
 {

@@ -51,7 +51,7 @@ etapa final do projeto.
 
 ## Instalação durante o desenvolvimento
 
-1. Copie a pasta `glpimsteams` para o diretório `plugins/` do GLPI.
+1. Copie a pasta `teams` para o diretório `plugins/` do GLPI.
 2. No GLPI, abra **Configuração > Plugins**.
 3. Instale e ative **GLPI Microsoft Teams Integration**.
 4. Abra a página de configuração do plugin.

@@ -1,13 +1,13 @@
 <?php
 
-use GlpiPlugin\Glpimsteams\Service\ConfigurationService;
-use GlpiPlugin\Glpimsteams\Service\ContentSanitizer;
-use GlpiPlugin\Glpimsteams\Service\NotificationService;
-use GlpiPlugin\Glpimsteams\Service\ServiceFactory;
+use GlpiPlugin\Teams\Service\ConfigurationService;
+use GlpiPlugin\Teams\Service\ContentSanitizer;
+use GlpiPlugin\Teams\Service\NotificationService;
+use GlpiPlugin\Teams\Service\ServiceFactory;
 
-function plugin_glpimsteams_ticket_added(object $ticket): void
+function plugin_teams_ticket_added(object $ticket): void
 {
-    plugin_glpimsteams_handle_notification(static function () use ($ticket): void {
+    plugin_teams_handle_notification(static function () use ($ticket): void {
         $service = new NotificationService(
             new ConfigurationService(),
             ServiceFactory::outbox(),
@@ -17,9 +17,9 @@ function plugin_glpimsteams_ticket_added(object $ticket): void
     });
 }
 
-function plugin_glpimsteams_ticket_updated(object $ticket): void
+function plugin_teams_ticket_updated(object $ticket): void
 {
-    plugin_glpimsteams_handle_notification(static function () use ($ticket): void {
+    plugin_teams_handle_notification(static function () use ($ticket): void {
         $service = new NotificationService(
             new ConfigurationService(),
             ServiceFactory::outbox(),
@@ -29,9 +29,9 @@ function plugin_glpimsteams_ticket_updated(object $ticket): void
     });
 }
 
-function plugin_glpimsteams_followup_added(object $followup): void
+function plugin_teams_followup_added(object $followup): void
 {
-    plugin_glpimsteams_handle_notification(static function () use ($followup): void {
+    plugin_teams_handle_notification(static function () use ($followup): void {
         $service = new NotificationService(
             new ConfigurationService(),
             ServiceFactory::outbox(),
@@ -41,9 +41,9 @@ function plugin_glpimsteams_followup_added(object $followup): void
     });
 }
 
-function plugin_glpimsteams_solution_added(object $solution): void
+function plugin_teams_solution_added(object $solution): void
 {
-    plugin_glpimsteams_handle_notification(static function () use ($solution): void {
+    plugin_teams_handle_notification(static function () use ($solution): void {
         $service = new NotificationService(
             new ConfigurationService(),
             ServiceFactory::outbox(),
@@ -53,7 +53,7 @@ function plugin_glpimsteams_solution_added(object $solution): void
     });
 }
 
-function plugin_glpimsteams_handle_notification(Closure $callback): void
+function plugin_teams_handle_notification(Closure $callback): void
 {
     try {
         $callback();
@@ -64,15 +64,15 @@ function plugin_glpimsteams_handle_notification(Closure $callback): void
     }
 }
 
-function plugin_glpimsteams_install(): bool
+function plugin_teams_install(): bool
 {
     global $DB;
 
-    $migration = new Migration(PLUGIN_GLPIMSTEAMS_VERSION);
+    $migration = new Migration(PLUGIN_TEAMS_VERSION);
 
     $tables = [
-        'glpi_plugin_glpimsteams_routes' => "
-            CREATE TABLE IF NOT EXISTS `glpi_plugin_glpimsteams_routes` (
+        'glpi_plugin_teams_routes' => "
+            CREATE TABLE IF NOT EXISTS `glpi_plugin_teams_routes` (
                 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
                 `entities_id` INT UNSIGNED NOT NULL DEFAULT 0,
                 `name` VARCHAR(191) NOT NULL,
@@ -90,16 +90,16 @@ function plugin_glpimsteams_install(): bool
                 KEY `is_active` (`is_active`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC
         ",
-        'glpi_plugin_glpimsteams_bot_keys' => "
-            CREATE TABLE IF NOT EXISTS `glpi_plugin_glpimsteams_bot_keys` (
+        'glpi_plugin_teams_bot_keys' => "
+            CREATE TABLE IF NOT EXISTS `glpi_plugin_teams_bot_keys` (
                 `id` TINYINT UNSIGNED NOT NULL,
                 `jwks` LONGTEXT NOT NULL,
                 `fetched_at` DATETIME NOT NULL,
                 PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC
         ",
-        'glpi_plugin_glpimsteams_user_links' => "
-            CREATE TABLE IF NOT EXISTS `glpi_plugin_glpimsteams_user_links` (
+        'glpi_plugin_teams_user_links' => "
+            CREATE TABLE IF NOT EXISTS `glpi_plugin_teams_user_links` (
                 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
                 `users_id` INT UNSIGNED NOT NULL,
                 `tenant_id` VARCHAR(191) NOT NULL,
@@ -117,8 +117,8 @@ function plugin_glpimsteams_install(): bool
                 KEY `is_active` (`is_active`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC
         ",
-        'glpi_plugin_glpimsteams_oauth_states' => "
-            CREATE TABLE IF NOT EXISTS `glpi_plugin_glpimsteams_oauth_states` (
+        'glpi_plugin_teams_oauth_states' => "
+            CREATE TABLE IF NOT EXISTS `glpi_plugin_teams_oauth_states` (
                 `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
                 `state_hash` CHAR(64) NOT NULL,
                 `teams_user_id` VARCHAR(191) NOT NULL,
@@ -133,8 +133,8 @@ function plugin_glpimsteams_install(): bool
                 KEY `teams_user_id` (`teams_user_id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC
         ",
-        'glpi_plugin_glpimsteams_events' => "
-            CREATE TABLE IF NOT EXISTS `glpi_plugin_glpimsteams_events` (
+        'glpi_plugin_teams_events' => "
+            CREATE TABLE IF NOT EXISTS `glpi_plugin_teams_events` (
                 `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
                 `event_key` VARCHAR(191) NOT NULL,
                 `provider` VARCHAR(64) NOT NULL,
@@ -149,8 +149,8 @@ function plugin_glpimsteams_install(): bool
                 KEY `event_type` (`event_type`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC
         ",
-        'glpi_plugin_glpimsteams_outbox' => "
-            CREATE TABLE IF NOT EXISTS `glpi_plugin_glpimsteams_outbox` (
+        'glpi_plugin_teams_outbox' => "
+            CREATE TABLE IF NOT EXISTS `glpi_plugin_teams_outbox` (
                 `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
                 `event_key` VARCHAR(191) NOT NULL,
                 `route_id` INT UNSIGNED DEFAULT NULL,
@@ -170,8 +170,8 @@ function plugin_glpimsteams_install(): bool
                 KEY `route_id` (`route_id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC
         ",
-        'glpi_plugin_glpimsteams_logs' => "
-            CREATE TABLE IF NOT EXISTS `glpi_plugin_glpimsteams_logs` (
+        'glpi_plugin_teams_logs' => "
+            CREATE TABLE IF NOT EXISTS `glpi_plugin_teams_logs` (
                 `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
                 `level` VARCHAR(16) NOT NULL,
                 `request_id` VARCHAR(64) NOT NULL,
@@ -208,7 +208,7 @@ function plugin_glpimsteams_install(): bool
     }
 
     CronTask::register(
-        'PluginGlpimsteamsPluginCronTask',
+        'PluginTeamsPluginCronTask',
         'processOutbox',
         60,
         [
@@ -219,11 +219,11 @@ function plugin_glpimsteams_install(): bool
     return true;
 }
 
-function plugin_glpimsteams_uninstall(): bool
+function plugin_teams_uninstall(): bool
 {
     global $DB;
 
-    CronTask::unregister('glpimsteams');
+    CronTask::unregister('teams');
 
     Config::deleteConfigurationValues(
         ConfigurationService::CONTEXT,
@@ -231,13 +231,13 @@ function plugin_glpimsteams_uninstall(): bool
     );
 
     $tables = [
-        'glpi_plugin_glpimsteams_routes',
-        'glpi_plugin_glpimsteams_bot_keys',
-        'glpi_plugin_glpimsteams_user_links',
-        'glpi_plugin_glpimsteams_oauth_states',
-        'glpi_plugin_glpimsteams_events',
-        'glpi_plugin_glpimsteams_outbox',
-        'glpi_plugin_glpimsteams_logs',
+        'glpi_plugin_teams_routes',
+        'glpi_plugin_teams_bot_keys',
+        'glpi_plugin_teams_user_links',
+        'glpi_plugin_teams_oauth_states',
+        'glpi_plugin_teams_events',
+        'glpi_plugin_teams_outbox',
+        'glpi_plugin_teams_logs',
     ];
 
     foreach ($tables as $table) {

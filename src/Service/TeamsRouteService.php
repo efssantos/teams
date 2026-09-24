@@ -1,12 +1,12 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Service;
+namespace GlpiPlugin\Teams\Service;
 
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
 
 final class TeamsRouteService
 {
-    private const TABLE = 'glpi_plugin_glpimsteams_routes';
+    private const TABLE = 'glpi_plugin_teams_routes';
 
     public function __construct(private readonly ConfigurationService $configuration)
     {

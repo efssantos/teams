@@ -1,12 +1,12 @@
 <?php
 
-use GlpiPlugin\Glpimsteams\Api\CurlHttpClient;
-use GlpiPlugin\Glpimsteams\Api\TeamsAccessTokenProvider;
-use GlpiPlugin\Glpimsteams\Api\TeamsBotClient;
-use GlpiPlugin\Glpimsteams\Service\ConfigurationService;
-use GlpiPlugin\Glpimsteams\Service\HealthService;
-use GlpiPlugin\Glpimsteams\Service\LoggingService;
-use GlpiPlugin\Glpimsteams\Service\TeamsRouteService;
+use GlpiPlugin\Teams\Api\CurlHttpClient;
+use GlpiPlugin\Teams\Api\TeamsAccessTokenProvider;
+use GlpiPlugin\Teams\Api\TeamsBotClient;
+use GlpiPlugin\Teams\Service\ConfigurationService;
+use GlpiPlugin\Teams\Service\HealthService;
+use GlpiPlugin\Teams\Service\LoggingService;
+use GlpiPlugin\Teams\Service\TeamsRouteService;
 
 include '../../../inc/includes.php';
 
@@ -154,7 +154,7 @@ Html::header(
     $_SERVER['PHP_SELF'],
     'config',
     'plugins',
-    'glpimsteams'
+    'teams'
 );
 
 echo '<div class="container-fluid px-0 px-md-2">';

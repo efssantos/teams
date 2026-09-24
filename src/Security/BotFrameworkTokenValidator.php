@@ -1,15 +1,15 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Security;
+namespace GlpiPlugin\Teams\Security;
 
-use GlpiPlugin\Glpimsteams\Api\HttpClientInterface;
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
-use GlpiPlugin\Glpimsteams\Service\ConfigurationService;
+use GlpiPlugin\Teams\Api\HttpClientInterface;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Service\ConfigurationService;
 
 final class BotFrameworkTokenValidator
 {
     private const METADATA_URL = 'https://login.botframework.com/v1/.well-known/openidconfiguration';
-    private const TABLE = 'glpi_plugin_glpimsteams_bot_keys';
+    private const TABLE = 'glpi_plugin_teams_bot_keys';
     private const CLOCK_SKEW = 300;
 
     public function __construct(

@@ -1,15 +1,15 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Service;
+namespace GlpiPlugin\Teams\Service;
 
-use GlpiPlugin\Glpimsteams\Api\TeamsAccessTokenProvider;
-use GlpiPlugin\Glpimsteams\Api\TeamsBotClient;
-use GlpiPlugin\Glpimsteams\Exception\ProviderHttpException;
+use GlpiPlugin\Teams\Api\TeamsAccessTokenProvider;
+use GlpiPlugin\Teams\Api\TeamsBotClient;
+use GlpiPlugin\Teams\Exception\ProviderHttpException;
 
 final class HealthService
 {
-    private const OUTBOX_TABLE = 'glpi_plugin_glpimsteams_outbox';
-    private const LOG_TABLE = 'glpi_plugin_glpimsteams_logs';
+    private const OUTBOX_TABLE = 'glpi_plugin_teams_outbox';
+    private const LOG_TABLE = 'glpi_plugin_teams_logs';
 
     public function __construct(
         private readonly ConfigurationService $configuration,

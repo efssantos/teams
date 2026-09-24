@@ -1,10 +1,10 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Service;
+namespace GlpiPlugin\Teams\Service;
 
 final class EventStoreService
 {
-    private const TABLE = 'glpi_plugin_glpimsteams_events';
+    private const TABLE = 'glpi_plugin_teams_events';
 
     public function claim(string $provider, string $externalId, string $eventType, array $payload): bool
     {

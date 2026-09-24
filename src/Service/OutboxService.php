@@ -1,13 +1,13 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Service;
+namespace GlpiPlugin\Teams\Service;
 
-use GlpiPlugin\Glpimsteams\Exception\ProviderHttpException;
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Exception\ProviderHttpException;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
 
 final class OutboxService
 {
-    private const TABLE = 'glpi_plugin_glpimsteams_outbox';
+    private const TABLE = 'glpi_plugin_teams_outbox';
     private const MAX_ATTEMPTS = 5;
 
     public function __construct(
@@ -92,7 +92,7 @@ final class OutboxService
         }
 
         $route = $DB->request([
-            'FROM' => 'glpi_plugin_glpimsteams_routes',
+            'FROM' => 'glpi_plugin_teams_routes',
             'WHERE' => [
                 'entities_id' => $entityId,
                 'is_active' => 1,

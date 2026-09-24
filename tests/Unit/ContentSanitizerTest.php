@@ -1,8 +1,8 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Tests\Unit;
+namespace GlpiPlugin\Teams\Tests\Unit;
 
-use GlpiPlugin\Glpimsteams\Service\ContentSanitizer;
+use GlpiPlugin\Teams\Service\ContentSanitizer;
 use PHPUnit\Framework\TestCase;
 
 final class ContentSanitizerTest extends TestCase

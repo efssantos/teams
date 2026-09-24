@@ -1,12 +1,12 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Authentication;
+namespace GlpiPlugin\Teams\Authentication;
 
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
 
 final class OAuthStateStore
 {
-    private const TABLE = 'glpi_plugin_glpimsteams_oauth_states';
+    private const TABLE = 'glpi_plugin_teams_oauth_states';
     private const DEFAULT_TTL = 600;
 
     public function create(array $teamsIdentity, int $ttl = self::DEFAULT_TTL): string

@@ -1,11 +1,11 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Tests\Unit;
+namespace GlpiPlugin\Teams\Tests\Unit;
 
-use GlpiPlugin\Glpimsteams\Api\GlpiOAuthClient;
-use GlpiPlugin\Glpimsteams\Api\HttpClientInterface;
-use GlpiPlugin\Glpimsteams\Api\HttpResponse;
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Api\GlpiOAuthClient;
+use GlpiPlugin\Teams\Api\HttpClientInterface;
+use GlpiPlugin\Teams\Api\HttpResponse;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
 use PHPUnit\Framework\TestCase;
 
 final class GlpiOAuthClientTest extends TestCase
@@ -16,7 +16,7 @@ final class GlpiOAuthClientTest extends TestCase
         $url = $client->buildAuthorizationUrl([
             'base_url' => 'https://glpi.example.test',
             'glpi_api_client_id' => 'client-id',
-            'glpi_redirect_uri' => 'https://glpi.example.test/plugins/glpimsteams/front/glpi-oauth.callback.php',
+            'glpi_redirect_uri' => 'https://glpi.example.test/plugins/teams/front/glpi-oauth.callback.php',
             'glpi_oauth_scope' => 'api user email',
         ], 'random-state-value');
 

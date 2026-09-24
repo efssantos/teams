@@ -1,22 +1,22 @@
 <?php
 
-use GlpiPlugin\Glpimsteams\Api\CurlHttpClient;
-use GlpiPlugin\Glpimsteams\Api\GlpiClient;
-use GlpiPlugin\Glpimsteams\Api\GlpiOAuthClient;
-use GlpiPlugin\Glpimsteams\Api\TeamsAccessTokenProvider;
-use GlpiPlugin\Glpimsteams\Api\TeamsBotClient;
-use GlpiPlugin\Glpimsteams\Authentication\OAuthService;
-use GlpiPlugin\Glpimsteams\Authentication\OAuthStateStore;
-use GlpiPlugin\Glpimsteams\Authentication\TokenStorageService;
-use GlpiPlugin\Glpimsteams\Controller\TeamsWebhookController;
-use GlpiPlugin\Glpimsteams\Security\BotFrameworkTokenValidator;
-use GlpiPlugin\Glpimsteams\Service\ConfigurationService;
-use GlpiPlugin\Glpimsteams\Service\ContentSanitizer;
-use GlpiPlugin\Glpimsteams\Service\EventStoreService;
-use GlpiPlugin\Glpimsteams\Service\LoggingService;
-use GlpiPlugin\Glpimsteams\Service\TeamsCommandService;
-use GlpiPlugin\Glpimsteams\Service\TeamsCommandParser;
-use GlpiPlugin\Glpimsteams\Service\UserMappingService;
+use GlpiPlugin\Teams\Api\CurlHttpClient;
+use GlpiPlugin\Teams\Api\GlpiClient;
+use GlpiPlugin\Teams\Api\GlpiOAuthClient;
+use GlpiPlugin\Teams\Api\TeamsAccessTokenProvider;
+use GlpiPlugin\Teams\Api\TeamsBotClient;
+use GlpiPlugin\Teams\Authentication\OAuthService;
+use GlpiPlugin\Teams\Authentication\OAuthStateStore;
+use GlpiPlugin\Teams\Authentication\TokenStorageService;
+use GlpiPlugin\Teams\Controller\TeamsWebhookController;
+use GlpiPlugin\Teams\Security\BotFrameworkTokenValidator;
+use GlpiPlugin\Teams\Service\ConfigurationService;
+use GlpiPlugin\Teams\Service\ContentSanitizer;
+use GlpiPlugin\Teams\Service\EventStoreService;
+use GlpiPlugin\Teams\Service\LoggingService;
+use GlpiPlugin\Teams\Service\TeamsCommandService;
+use GlpiPlugin\Teams\Service\TeamsCommandParser;
+use GlpiPlugin\Teams\Service\UserMappingService;
 
 include '../../../inc/includes.php';
 

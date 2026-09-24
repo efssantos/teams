@@ -1,12 +1,12 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Tests\Unit;
+namespace GlpiPlugin\Teams\Tests\Unit;
 
-use GlpiPlugin\Glpimsteams\Api\HttpClientInterface;
-use GlpiPlugin\Glpimsteams\Api\HttpResponse;
-use GlpiPlugin\Glpimsteams\Security\BotFrameworkTokenValidator;
-use GlpiPlugin\Glpimsteams\Service\ConfigurationService;
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Api\HttpClientInterface;
+use GlpiPlugin\Teams\Api\HttpResponse;
+use GlpiPlugin\Teams\Security\BotFrameworkTokenValidator;
+use GlpiPlugin\Teams\Service\ConfigurationService;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
 use PHPUnit\Framework\TestCase;
 
 final class BotFrameworkTokenValidatorTest extends TestCase

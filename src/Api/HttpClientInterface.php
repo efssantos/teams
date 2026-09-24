@@ -1,6 +1,6 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Api;
+namespace GlpiPlugin\Teams\Api;
 
 interface HttpClientInterface
 {

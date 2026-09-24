@@ -1,9 +1,9 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Api;
+namespace GlpiPlugin\Teams\Api;
 
-use GlpiPlugin\Glpimsteams\Exception\GlpiApiException;
-use GlpiPlugin\Glpimsteams\Service\ConfigurationService;
+use GlpiPlugin\Teams\Exception\GlpiApiException;
+use GlpiPlugin\Teams\Service\ConfigurationService;
 
 final class GlpiClient
 {

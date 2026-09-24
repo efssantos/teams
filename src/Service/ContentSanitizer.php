@@ -1,6 +1,6 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Service;
+namespace GlpiPlugin\Teams\Service;
 
 final class ContentSanitizer
 {

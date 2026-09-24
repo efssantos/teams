@@ -1,8 +1,8 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Api;
+namespace GlpiPlugin\Teams\Api;
 
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
 
 final class HttpResponse
 {

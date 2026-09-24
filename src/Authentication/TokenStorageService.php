@@ -1,13 +1,13 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Authentication;
+namespace GlpiPlugin\Teams\Authentication;
 
 use GLPIKey;
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
 
 final class TokenStorageService
 {
-    private const TABLE = 'glpi_plugin_glpimsteams_user_links';
+    private const TABLE = 'glpi_plugin_teams_user_links';
 
     public function save(int $usersId, array $teamsIdentity, array $tokenPayload): void
     {

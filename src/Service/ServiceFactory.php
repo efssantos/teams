@@ -1,10 +1,10 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Service;
+namespace GlpiPlugin\Teams\Service;
 
-use GlpiPlugin\Glpimsteams\Api\CurlHttpClient;
-use GlpiPlugin\Glpimsteams\Api\TeamsAccessTokenProvider;
-use GlpiPlugin\Glpimsteams\Api\TeamsBotClient;
+use GlpiPlugin\Teams\Api\CurlHttpClient;
+use GlpiPlugin\Teams\Api\TeamsAccessTokenProvider;
+use GlpiPlugin\Teams\Api\TeamsBotClient;
 
 final class ServiceFactory
 {

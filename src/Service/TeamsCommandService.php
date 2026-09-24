@@ -1,12 +1,12 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Service;
+namespace GlpiPlugin\Teams\Service;
 
-use GlpiPlugin\Glpimsteams\Api\GlpiClient;
-use GlpiPlugin\Glpimsteams\Api\TeamsBotClient;
-use GlpiPlugin\Glpimsteams\Authentication\OAuthService;
-use GlpiPlugin\Glpimsteams\Exception\GlpiApiException;
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Api\GlpiClient;
+use GlpiPlugin\Teams\Api\TeamsBotClient;
+use GlpiPlugin\Teams\Authentication\OAuthService;
+use GlpiPlugin\Teams\Exception\GlpiApiException;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
 
 final class TeamsCommandService
 {

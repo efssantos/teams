@@ -1,6 +1,6 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Exception;
+namespace GlpiPlugin\Teams\Exception;
 
 class TeamsIntegrationException extends \RuntimeException
 {

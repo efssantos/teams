@@ -1,11 +1,11 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Authentication;
+namespace GlpiPlugin\Teams\Authentication;
 
-use GlpiPlugin\Glpimsteams\Api\GlpiOAuthClient;
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
-use GlpiPlugin\Glpimsteams\Service\ConfigurationService;
-use GlpiPlugin\Glpimsteams\Service\LoggingService;
+use GlpiPlugin\Teams\Api\GlpiOAuthClient;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Service\ConfigurationService;
+use GlpiPlugin\Teams\Service\LoggingService;
 
 final class OAuthService
 {

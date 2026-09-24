@@ -1,9 +1,9 @@
 <?php
 
-namespace GlpiPlugin\Glpimsteams\Tests\Unit;
+namespace GlpiPlugin\Teams\Tests\Unit;
 
-use GlpiPlugin\Glpimsteams\Api\HttpResponse;
-use GlpiPlugin\Glpimsteams\Exception\TeamsIntegrationException;
+use GlpiPlugin\Teams\Api\HttpResponse;
+use GlpiPlugin\Teams\Exception\TeamsIntegrationException;
 use PHPUnit\Framework\TestCase;
 
 final class HttpResponseTest extends TestCase
