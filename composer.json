@@ -1,0 +1,25 @@
+{
+    "name": "glpi-plugin/glpimsteams",
+    "description": "GLPI Microsoft Teams Integration plugin",
+    "type": "project",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "GlpiPlugin\\Glpimsteams\\": "src/"
+        },
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GlpiPlugin\\Glpimsteams\\Tests\\": "tests/"
+        }
+    }
+}
